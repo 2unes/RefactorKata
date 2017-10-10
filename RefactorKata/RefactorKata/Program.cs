@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace RefactorKata
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var conn = new SqlConnection("Server=.;Database=myDataBase;User Id=myUsername;Password = myPassword;");
 
