@@ -27,8 +27,9 @@ namespace RefactorKata
                 };
                 products.Add(prod);
             }
-            conn.Dispose();
             Console.WriteLine("Products Loaded!");
+            conn.Dispose();
+
             foreach (var t in products)
             {
                 Console.WriteLine(t.name);
@@ -37,7 +38,7 @@ namespace RefactorKata
     }
     public class Product
     {
-        public string name;
-        public string Name { get { return name; } set { name = value; } }
+        public string name { get; set; }
+        
     }
 }
