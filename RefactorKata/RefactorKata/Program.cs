@@ -8,6 +8,16 @@ namespace RefactorKata
     {
         private static void Main(string[] args)
         {
+            List<Product> products = GetProducts();
+
+            foreach (var Products in products)
+            {
+                Console.WriteLine(Products.name);
+            }
+        }
+
+        private static List<Product> GetProducts()
+        {
             var conn = new SqlConnection("Server=.;Database=myDataBase;User Id=myUsername;Password = myPassword;");
 
             var cmd = conn.CreateCommand();
@@ -29,11 +39,7 @@ namespace RefactorKata
             }
             Console.WriteLine("Products Loaded!");
             conn.Dispose();
-
-            foreach (var ListProducts in products)
-            {
-                Console.WriteLine(ListProducts.name);
-            }
+            return products;
         }
     }
     public class Product
